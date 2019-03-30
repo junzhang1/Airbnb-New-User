@@ -5,7 +5,7 @@ date: "2018/12/8"
 output: html_document
 ---
 ##1. Introduction to data
-In train_user_2.csv  and test_users.csv  file, data provided a list of users along with some related information and statistics such as gender, language and signup flow. Sessions.csv file gives information about web sessions log for users. The column ¡®country_destination¡¯ in train file is the record of destination of each user and it is the target variable to predict in the test set. There are 12 possible outcomes of the destination countries: 'US', 'FR', 'CA', 'GB', 'ES', 'IT', 'PT', 'NL','DE', 'AU', 'NDF' (no destination found), and 'other'. Countries.csv also provides information about 10 country destination. All users in test file are new user and are from the USA, therefore, we are required to predict which country their first booking destination will be.  
+In train_user_2.csv  and test_users.csv  file, data provided a list of users along with some related information and statistics such as gender, language and signup flow. Sessions.csv file gives information about web sessions log for users. The column ¡®country_destination¡¯ in train file is the record of destination of each user and it is the target variable to predict in the test set. There are 12 possible outcomes of the destination countries: 'US', 'FR', 'CA', 'GB', 'ES', 'IT', 'PT', 'NL','DE', 'AU', 'NDF' (no destination found), and 'other'. Countries.csv also provides information about 10 country destination. All users in test file are new user and are from the USA, therefore, I'm required to predict which country their first booking destination will be.  
  
 The training and test sets are split by dates. The training set includes users dataset dates back to 2010 and in the test set, all the new users are people with first activities after 7/1/2014 . The following part gives a detailed description of variables in files.
 
@@ -31,8 +31,8 @@ user_id: to be joined with the column 'id' in users table
 
 
 ##2. Business question 
-We want to use age, destination_language, id, gender, signup_method, language, affiliate_channel, affiliate_provider, signup_app, first_device_type and first_browserPredict variables to predict in which country a new Airbnb user will make his or her first booking.
-We are trying to find the best model to predict new Airbnb users' first booking.
+I want to use age, destination_language, id, gender, signup_method, language, affiliate_channel, affiliate_provider, signup_app, first_device_type and first_browserPredict variables to predict in which country a new Airbnb user will make his or her first booking.
+I'm trying to find the best model to predict new Airbnb users' first booking.
 
 
 ```{r setup, include=FALSE}
