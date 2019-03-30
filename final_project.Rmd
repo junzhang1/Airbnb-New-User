@@ -88,7 +88,7 @@ plot_intro(merged_user)
 
 ```
 
-As we can see from the introduction table, we have 213451 rows and 29 columns. 14.6% of observations are missing. Additionally, we find that some continous variables such as signup_flow should be factor, we will process these variables in the following part.
+As we can see from the introduction table, there're 213451 rows and 29 columns. 14.6% of observations are missing. Additionally, I find that some continous variables such as signup_flow should be factor, I will process these variables in the following part.
 
 ```{r,fig.height=10}
 # Draw histograms to visualize frequency distributions for all continous variables
@@ -100,7 +100,7 @@ plot_histogram(merged_user)
 plot_bar(merged_user)
 ```
 
-We can see that the date in our data table is composed of year, month and day. We want to see seasonal changes in registration and activation. So here we need to seperate year, month and day into different columns.
+We can see that the date in our data table is composed of year, month and day. I want to see seasonal changes in registration and activation. So here I seperate year, month and day into different columns.
 
 ```{r, split_date}
 # Split the date of date_account_created and timestamp_first_active
@@ -218,7 +218,7 @@ ggplot(merged_user, aes(x = country_destination, y = age, fill = country_destina
 We can see that in addition to domestic travel, young Americans are more likely to travel to Spain, France, Portugal and Netherlands.
 
 
-Next,We divided the target countries and devices into several categories to see the chioces of different genders and ages for these categories.
+Next,I divide the target countries and devices into several categories to see the chioces of different genders and ages for these categories.
 
 ```{r,add_new_group}
 # Divide countries into four categories
@@ -487,7 +487,7 @@ rownames(predictions) <- c('NDF','US','other','FR','CA','GB','ES','IT','PT','NL'
 a <- t(predictions)
 ```
 
-We extracted the top prediction for each user and created a confusion matrix for our prediction.
+I extracted the top prediction for each user and created a confusion matrix for our prediction.
 
 ```{r}
 # Print model
@@ -578,7 +578,7 @@ paste("We can see that the accuracy is", overall2.accuracy, ", and the Kappa val
 ```
 
 
-Then we compare three models.
+Let's compare three models.
 ```{r}
 Fianl_Accuracy <- c(overall3.accuracy,overall.accuracy,overall2.accuracy)
 Final_Kappa <- c(overall3.kappa, overall.kappa, overall2.kappa)
@@ -587,9 +587,9 @@ r_table <- data.frame("Model" = title, "Accuracy"=Fianl_Accuracy, "Kappa" = Fina
 r_table
 ```
 
-We can see that Recursive Partitioning has the highest Kappa value, while Extreme Gradient Boosting has the highest accuracy. We pick the model with the highest Kappa value (i.e. rpart) because Kappa takes into account class imbalance. As we can see from the EDA, in our training data, our class is highly imbalanced. So Kappa is a better measure here.
+We can see that Recursive Partitioning has the highest Kappa value, while Extreme Gradient Boosting has the highest accuracy. I pick the model with the highest Kappa value (i.e. rpart) because Kappa takes into account class imbalance. As we can see from the EDA, in our training data, our class is highly imbalanced. So Kappa is a better measure here.
 
-Then we use recursive partitioning to predict test set.
+Then I use recursive partitioning to predict test set.
 
 
 ##6. Final discussion
@@ -709,5 +709,5 @@ final_predict
 ```
 
 
-We can see that our prediction results don't give us much information about users' first booking destination since there're only two classes, US and NDF. This means that most of the users will first book a place in the U.S. or they will not book according to our prediction. This is because our data is highly imbalanced, and the classifiers tend to be biased towards the majority class (i.e. US and NDF) and hence perform poorly on the minority class. Besides, we can see that many of the attributes are not useful in training the model, and our raw data is intuitively not very relevant to the results what we need to predict. If the original data contains more variables, such as the user's previous hotel and ticket consumption records, our predicted results will be more accurate. 
-Another reason that may affect our results is that we did not include date-related variables. After research, we found that a large number of users were not recorded for those variables. So if we use them, it will greatly reduce the size of sample we can use.
+We can see that our prediction results don't give us much information about users' first booking destination since there're only two classes, US and NDF. This means that most of the users will first book a place in the U.S. or they will not book according to our prediction. This is because the data is highly imbalanced, and the classifiers tend to be biased towards the majority class (i.e. US and NDF) and hence perform poorly on the minority class. Besides, we can see that many of the attributes are not useful in training the model, and our raw data is intuitively not very relevant to the results what I need to predict. If the original data contains more variables, such as the user's previous hotel and ticket consumption records, our predicted results will be more accurate. 
+Another reason that may affect our results is that I did not include date-related variables. After research, I found that a large number of users were not recorded for those variables. So if I use them, it will greatly reduce the size of sample I can use.
