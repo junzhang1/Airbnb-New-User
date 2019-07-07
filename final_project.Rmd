@@ -1,6 +1,6 @@
 ---
 title: "Final Project: Airbnb New User Bookings Prediction"
-author: "Mingyang Li, Jun Zhang, Weijia Mi"
+author: "Yangying Xu, Mingyang Li, Jun Zhang, Weijia Mi"
 date: "2018/12/8"
 output: html_document
 ---
@@ -580,9 +580,9 @@ r_table <- data.frame("Model" = title, "Accuracy"=Fianl_Accuracy, "Kappa" = Fina
 r_table
 ```
 
-We can see that Recursive Partitioning has the highest Kappa value, while Extreme Gradient Boosting has the highest accuracy. We pick the model with the highest Kappa value (i.e. rpart) because Kappa takes into account class imbalance. As we can see from the EDA, in our training data, our class is highly imbalanced. So Kappa is a better measure here.
+We can see that Random Forest has the highest Kappa value, while Extreme Gradient Boosting has the highest accuracy. We pick the model with the highest Kappa value (i.e. rpart) because Kappa takes into account class imbalance. As we can see from the EDA, in our training data, our class is highly imbalanced. So Kappa is a better measure here.
 
-Then we use recursive partitioning to predict test set.
+Then we use Random Forest to predict test set.
 
 
 ##6. Final discussion
